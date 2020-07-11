@@ -1,0 +1,120 @@
+.contain {
+    font-size: .25rem;
+}
+
+.search-wrap {
+    height: 1.11rem;
+    background-color: #f3f3f3;
+
+}
+
+.search-cont {
+    width: 7.09rem;
+    height: .64rem;
+    background: #ffffff;
+    border-radius: .1rem;
+}
+
+.search-img {
+    width: .24rem;
+    height: .24rem;
+    margin-right: 5px;
+    margin-bottom: .05rem;
+}
+
+input {
+    width: 2.61rem;
+    font-size: .28rem;
+    outline: none;
+    color: #414141;
+}
+
+input[type=search]::-ms-clear {
+    display: none;
+}
+
+input::-webkit-search-cancel-button {
+    display: none;
+}
+input::-webkit-input-placeholder { 
+    /* WebKit browsers */ 
+    color: #b6b6b6; 
+    } 
+    input:-moz-placeholder { 
+    /* Mozilla Firefox 4 to 18 */ 
+    color: #b6b6b6; 
+    } 
+    input::-moz-placeholder { 
+    /* Mozilla Firefox 19+ */ 
+    color: #b6b6b6; 
+    } 
+    input:-ms-input-placeholder { 
+    /* Internet Explorer 10+ */ 
+    color: #b6b6b6; 
+    }
+
+/* 内容样式 */
+.content-wrap {}
+
+.content-title {
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.content-title>.title-item {
+    width: 33%;
+    height: .91rem;
+    color: #414141;
+    font-size: .27rem;
+}
+
+.content-title-hover {
+    border-bottom: 2px solid #686194;
+    color: #686194 !important;
+    font-weight: 700;
+}
+
+.content-list {}
+
+.content-list>.item {
+    width: 6.55rem;
+    height: 1.12rem;
+    border-bottom: 1px solid #f5f5f5;
+    font-size: .27rem;
+    color: #414141;
+}
+
+.content-list>.item>.name {
+    width: .9rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+}
+
+.content-list>.item>.goods {
+    width: 1.5rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+}
+
+.content-list>.item>.status {
+    width: 1.2rem;
+    height: .51rem;
+    background-color: #d6d6d6;
+    color: #ffffff;
+    border-radius: 0.05rem;
+
+}
+
+.content-list>.item>.statusHover {
+    width: 1.2rem;
+    height: .51rem;
+    background-color: #686194;
+    color: #ffffff;
+    border-radius: 0.05rem;
+
+}
