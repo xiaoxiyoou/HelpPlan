@@ -7,12 +7,62 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <script src="js/rem.js"></script>
     <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/search.css" />
+    <link rel="stylesheet" href="css/comont.css" />
     <link rel="stylesheet" href="js/need/layer.css" />
     <title>搜索</title>
 </head>
 
 <body>
-
+    <div class="contain">
+        <!-- 搜索 -->
+        <div class="search-wrap row a-c j-c">
+            <div class="search-cont row a-c j-b">
+                <img class="search-img" src="img/search.png" alt="">
+                <input id="input" type="search" placeholder="搜索用户姓名或电话">
+                <img class="close-img" src="img/close.png" alt="">
+            </div>
+            <div class="cancel">取消</div>
+        </div>
+        <div class="record-wrap">
+            <div class="record-title-wrap row j-b">
+                <div class="record-title">搜索历史</div>
+                <img class="delete-img" src="img/delete.png" alt="">
+            </div>
+            <div class="record-cont row f-w">
+                <div class="record-item" value="王富贵">王富贵</div>
+                <div class="record-item" value="王多多">王多多</div>
+                <div class="record-item" value="18640076205">18640076205</div>
+                <div class="record-item" value="刘富贵">刘富贵</div>
+                <div class="record-item" value="18640076205">18640076205</div>
+                <div class="record-item" value="哈哈哈哈">哈哈哈哈</div>
+            </div>
+            <img class="noInfo" src="img/noInfo.png" alt="">
+        </div>
+        <!-- 内容 -->
+        <div class="content-wrap">
+            <div class="content-list col j-c a-c">
+                <div class="item row a-c j-b">
+                    <div class="name">李富贵</div>
+                    <div class="phone">18640073241</div>
+                    <div class="goods">红布条</div>
+                    <div class="statusHover row a-c j-c">待核销</div>
+                </div>
+                <div class="item row a-c j-b">
+                    <div class="name">迪丽热巴</div>
+                    <div class="phone">18640073241</div>
+                    <div class="goods">家族宝福禄五帝钱</div>
+                    <div class="status row a-c j-c">已过期</div>
+                </div>
+                <div class="item row a-c j-b">
+                    <div class="name">热巴</div>
+                    <div class="phone">18640073241</div>
+                    <div class="goods">家族宝福禄五帝钱</div>
+                    <div class="status row a-c j-c">已领取</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </body>
@@ -21,10 +71,40 @@
 <script src="js/layer.js"></script>
 <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 <script src="js/share.js"></script>
+<script src="js/coment.js"></script>
 
 <script>
     $(function () {
+        // 触发搜索事件
+        $('#input').bind('search', function () {
+            console.log('搜索内容', $("#input").val())
+            $(".content-wrap").fadeIn(500);
+            $(".record-wrap").fadeOut(50);
+        })
+        // 清空搜索框内容
+        $(".close-img").click(function () {
+            $("input").attr("value", "");
+        });
+        // 取消搜索
+        $(".cancel").click(function () {
+            $("input").blur();
+            $(".content-wrap").fadeOut(50);
+            $(".record-wrap").fadeIn(500);
+        });
+        // 清空搜索记录
+        $(".delete-img").click(function () {
+            $(".record-cont").fadeOut(500);
+            $(".noInfo").fadeIn(2500);
+        });
+        // 点击搜索记录
+        $(".record-item").click(function () {
+            $("input").attr("value", $(this).attr("value"));
+            console.log('搜索内容', $("#input").val())
+            $(".content-wrap").fadeIn(500);
+            $(".record-wrap").fadeOut(50);
 
+        });
+     
     })
 </script>
 

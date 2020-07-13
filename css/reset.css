@@ -195,3 +195,34 @@ img{
   outline-width:0px;
   vertical-align:top;
 }
+input[type=search]::-ms-clear {
+  display: none;
+}
+
+input::-webkit-search-cancel-button {
+  display: none;
+}
+
+input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #b6b6b6;
+}
+
+input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #b6b6b6;
+}
+
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #b6b6b6;
+}
+
+input:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #b6b6b6;
+}
+.contain {
+  font-size: .25rem;
+  display: none;
+}
