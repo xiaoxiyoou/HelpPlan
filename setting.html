@@ -22,7 +22,8 @@
             <div class="item row j-b a-c border-btm">
                 <div class="">选择到店赠送礼品</div>
                 <div class=" select-wrap row a-c">
-                    <input class="select-input-text" id="selectOne" name="goodsName" readonly="readonly" placeholder="选择礼品">
+                    <input class="select-input-text" id="selectOne" name="goodsName" readonly="readonly"
+                        placeholder="选择礼品">
                     <img class="arrow" src="img/arrow-icon.png" alt="">
                 </div>
             </div>
@@ -39,7 +40,8 @@
             <div class="item row j-b a-c border-btm">
                 <div class="">选择到店赠送礼品</div>
                 <div class="select-wrap row a-c">
-                    <input class="select-input-text" id="selectTwo" name="goodsName" readonly="readonly" placeholder="选择礼品">
+                    <input class="select-input-text" id="selectTwo" name="goodsName" readonly="readonly"
+                        placeholder="选择礼品">
                     <img class="arrow" src="img/arrow-icon.png" alt="">
                 </div>
             </div>
@@ -158,6 +160,9 @@
                 return false
             }
             $(".select-input-two").val(num)
+        });
+        $(".purchase ").click(function () {
+            window.location.href = './purchase.html'
         });
 
     })

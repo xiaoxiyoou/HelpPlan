@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/address.css" />
+    <link rel="stylesheet" href="js/need/layer.css" />
+    <title>收货地址</title>
+</head>
+
+<body>
+    <div class="contain">
+        <div class="address-wrap">
+            <div class="address-cont row j-b a-c">
+                <img class="checked" src="img/checked.png" alt="">
+                <div class="address-item">
+                    <div class="address-name">辽宁省 沈阳市 大东区</div>
+                    <div class="address-des">辽宁省沈阳市铁西区经济技术开发区中央
+                        大街22号25#2-24-1</div>
+                    <div class="address-phone">李富贵 186****6124</div>
+                </div>
+                <img class="edit" src="img/edit.png" alt="">
+            </div>
+            <div class="address-cont row j-b a-c">
+                <img class="checked" src="img/unchecked.png" alt="">
+                <div class="address-item">
+                    <div class="address-name">辽宁省 沈阳市 大东区</div>
+                    <div class="address-des">辽宁省沈阳市铁西区经济技术开发区中央
+                        大街22号25#2-24-1</div>
+                    <div class="address-phone">李富贵 186****6124</div>
+                </div>
+                <img class="edit" src="img/edit.png" alt="">
+            </div>
+        </div>
+        <div class="address-btm row a-c j-c">
+            新建收货地址
+        </div>
+    </div>
+</body>
+<script src="js/jquery-1.8.2.js"></script>
+<script src="js/noScaling.js"></script>
+<script src="js/layer.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script src="js/share.js"></script>
+<script src="js/coment.js"></script>
+
+<script>
+    $(function () {
+        // 新增地址
+        $(".address-btm ").click(function () {
+            window.location.href = "./newAddress.html"
+        });
+    })
+</script>
+
+</html>

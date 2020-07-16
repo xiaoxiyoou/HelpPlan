@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/comont.css" />
+    <link rel="stylesheet" href="css/popup.css" />
+    <link rel="stylesheet" href="css/coupon.css" />
+    <link rel="stylesheet" href="js/need/layer.css" />
+    <title>优惠券</title>
+</head>
+
+<body>
+    <div class="contain">
+        <!-- 内容 -->
+        <div class="content-wrap">
+            <div class="content-title row a-c">
+                <div class="title-item content-title-hover row a-c j-c">
+                    可使用（10）
+                </div>
+                <div class="title-item row a-c j-c">
+                    已使用（10）
+                </div>
+                <div class="title-item row a-c j-c">
+                    已过期（10）
+                </div>
+            </div>
+        </div>
+        <div class="pre-wrap">
+            <div class="pre-list">
+                <div class="pre-cont row a-c j-b">
+                    <img class="pre-img" src="img/goods.png" alt="" />
+                    <div class="pre-item">
+                        <div class="pre-top row a-c j-b">
+                            <div class="pre-name-wrap">
+                                <div class="pre-name">家族宝红布条</div>
+                                <div class="pre-des">免费到店领取指定商品</div>
+                            </div>
+                            <div class="pre-money">￥3.00</div>
+                        </div>
+                        <div class="pre-btm row j-b ">
+                            <div class="pre-date">2020.2.1-2020.3.1</div>
+                            <div class="pre-btn row a-c j-c">免费到店领取</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pre-shopDetail row a-c j-b">
+                    <div class="see">查看店铺详情</div>
+                    <img class="arrow" src="img/arrow-icon.png" alt="">
+                </div>
+            </div>
+            <div class="pre-list">
+                <div class="pre-cont row a-c j-b">
+                    <img class="pre-img" src="img/goods.png" alt="" />
+                    <div class="pre-item">
+                        <div class="pre-top row a-c j-b">
+                            <div class="pre-name-wrap">
+                                <div class="pre-name">家族宝红布条</div>
+                                <div class="pre-des">免费到店领取指定商品</div>
+                            </div>
+                            <div class="pre-money">￥3.00</div>
+                        </div>
+                        <div class="pre-btm row j-b ">
+                            <div class="pre-date">2020.2.1-2020.3.1</div>
+                            <div class="pre-btn row a-c j-c">免费到店领取</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pre-shopDetail row a-c j-b">
+                    <div class="see">查看店铺详情</div>
+                    <img class="arrow" src="img/arrow-icon.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- 领取弹出框 -->
+        <div class="popup-wrap">
+            <div class="popup-mask"></div>
+            <div class="popup-cont  col a-c j-c">
+                <img class="cross" src="img/cross.png" alt="" />
+                <div class="title">请输入信息免费到店领取礼品</div>
+                <input type="text" placeholder="请输入您的姓名">
+                <input type="number" placeholder="请输入手机号码">
+                <div class="btn row a-c j-c">确认领取</div>
+                <div class="tip">关注公众号<span>“赋予爱的亲人尽孝服务平台”</span></div>
+                <div class="tip">领取此券后，请在<span>“个人中心-优惠券”</span>中查看</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-1.8.2.js"></script>
+<script src="js/noScaling.js"></script>
+<script src="js/layer.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script src="js/share.js"></script>
+<script src="js/coment.js"></script>
+
+<script>
+    $(function () {
+        // 导航栏点击效果
+        $('.title-item').click(function () {
+            $(".title-item ").removeClass("content-title-hover");
+            $(this).addClass("content-title-hover");
+        })
+        // 点击到店领取
+        $(".pre-btn ").click(function () {
+            $(".popup-wrap").css('display', 'block')
+        });
+        // 点击关闭
+        $(".cross").click(function () {
+            $(".popup-wrap").css('display', 'none')
+        });
+        $(".popup-mask").click(function () {
+            $(".popup-wrap").css('display', 'none')
+        });
+
+    })
+</script>
+
+</html>
