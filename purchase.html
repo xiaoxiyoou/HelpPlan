@@ -15,6 +15,7 @@
 
 <body>
     <div class="contain">
+        <!-- 已添加地址 -->
         <div class="address-wrap">
             <div class="address-cont row j-b a-c">
                 <div class="address-item">
@@ -26,14 +27,25 @@
                 <img class="arrow" src="img/arrow-icon.png" alt="">
             </div>
         </div>
+        <!-- 未添加地址 -->
+        <div class="add-wrap row j-b a-c">
+            <div class="add-item">请添加您的收货地址</div>
+            <img class="arrow" src="img/arrow-icon.png" alt="">
+        </div>
+        <!-- 商品 -->
         <div class="goods-wrap">
             <div class="goods-cont">
                 <div class="goods-list row">
                     <img class="godds-img" src="img/goods.png" alt="">
                     <div class="goods-item col j-a">
-                        <div class="goods-name">家族宝红布条</div>
-                        <div class="alBuy">已购30%</div>
-                        <div class="goods-price row">
+                        <div class="goods-name">家族宝红布条家族宝红布条家族宝红布条家族</div>
+                        <div class="progress-wrap row a-c">
+                            <div class="layui-progress">
+                                <div class="layui-progress-bar"></div>
+                            </div>
+                            <div class="alBuy">已购30%</div>
+                        </div>
+                        <div class="goods-price row a-c">
                             <div class="defalut-price">￥<span>3</span>.00</div>
                             <div class="privi-price row a-c j-c">诚商价格￥<span>2</span>.00</div>
                         </div>
@@ -49,8 +61,13 @@
                     <img class="godds-img" src="img/goods.png" alt="">
                     <div class="goods-item col j-a">
                         <div class="goods-name">家族宝红布条</div>
-                        <div class="alBuy">已购30%</div>
-                        <div class="goods-price row">
+                        <div class="progress-wrap row a-c">
+                            <div class="layui-progress">
+                                <div class="layui-progress-bar"></div>
+                            </div>
+                            <div class="alBuy">已购30%</div>
+                        </div>
+                        <div class="goods-price row a-c">
                             <div class="defalut-price">￥<span>3</span>.00</div>
                             <div class="privi-price row a-c j-c">诚商价格￥<span>2</span>.00</div>
                         </div>
@@ -62,12 +79,31 @@
                 </div>
             </div>
         </div>
+        <!-- 底部 -->
         <div class="purchase-btm row  a-c">
-            <div class="price-wrap">
+            <div class="price-wrap col j-c">
                 <div class="defalut-price">（不含运费）合计：￥<span>70</span>.00</div>
                 <div class="shop-price">诚商进货将节省：￥<span>10</span>.00</div>
             </div>
             <div class="btn col a-c j-c">确认提交</div>
+        </div>
+        <!-- 提交成功弹框 -->
+        <div class="popup-wrap success-popup">
+            <div class="popup-mask"></div>
+            <div class="popup-cont  col a-c j-c">
+                <img class="" src="img/success.png" alt="">
+                <div class="title">提交成功</div>
+                <div class="des">客服将在72小时内与您联系</div>
+            </div>
+        </div>
+        <!-- 提交失败弹框 -->
+        <div class="popup-wrap fail-popup">
+            <div class="popup-mask"></div>
+            <div class="popup-cont  col a-c j-c">
+                <img class="" src="img/fail.png" alt="">
+                <div class="title">提交失败</div>
+                <div class="des">请完善收货信息，再重新提交</div>
+            </div>
         </div>
     </div>
 </body>
@@ -77,11 +113,26 @@
 <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 <script src="js/share.js"></script>
 <script src="js/coment.js"></script>
+<script src="js/layui.js"></script>
 
 <script>
     $(function () {
         $(".address-wrap ").click(function () {
             window.location.href = './address.html'
+        });
+        $(".add-wrap").click(function () {
+            window.location.href = './address.html'
+        });
+        // 点击确认购买
+        $(".btn").click(function () {
+            $(".popup-wrap").css('display', 'block')
+        });
+        // 点击关闭
+        $(".cross").click(function () {
+            $(".popup-wrap").css('display', 'none')
+        });
+        $(".popup-mask").click(function () {
+            $(".popup-wrap").css('display', 'none')
         });
 
     })

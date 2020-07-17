@@ -2,7 +2,13 @@
     width: .19rem;
     height: .32rem;
 }
-
+.add-wrap{
+    background-color: #ffffff;
+    padding:  0 .3rem;
+    height: .97rem;
+    color: #000000;
+    font-size: .3rem;
+}
 .goods-cont{
     background-color: #ffffff;
     padding: .3rem .3rem 0;
@@ -18,6 +24,26 @@
 }
 .goods-item{
     height: 1.74rem;
+}
+.goods-name{
+    overflow:hidden;
+    display:-webkit-box;
+   -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    text-overflow:ellipsis;
+}
+.layui-progress{
+    width: 2.7rem;
+    height: .15rem;
+    background-color: rgb(232,232,232);
+    border-radius: .08rem;
+    margin-right: .1rem;
+}
+.layui-progress-bar{
+    background-color:#77719f;
+    width: 60%;
+    height: 100%;
+    border-radius: .08rem;
 }
 .defalut-price{
     color: #77719f;
@@ -47,16 +73,16 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+    height: 1rem;
 }
 .price-wrap{
     width: 70%;
     padding-left: .3rem;
     background-color: #ffffff;
     border-top: 1px solid #f5f5f5;
-    height: .95rem;
 }
 .price-wrap{
-    height: .95rem;
+    height: 1rem;
 }
 .price-wrap>.defalut-price{
     font-size: .21rem;
@@ -76,7 +102,54 @@
 }
 .purchase-btm>.btn{
     width: 30%;
-    height: .95rem;
+    height: 1rem;
+    font-size: .3rem;
     color: #ffffff;
     background-color: #77719f;
+}
+/* 弹出框 */
+.popup-mask {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0.3;
+}
+.popup-wrap{
+    display: none;
+
+}
+.popup-cont {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    background-color: #ffffff;
+    width: 5.1rem;
+    border-radius: .1rem;
+    padding-bottom: .96rem;
+
+}
+.popup-cont>img{
+    width: 1.54rem;
+    height: 1.54rem;
+    margin-top: .82rem;
+}
+.popup-cont>.title{
+    color: #000000;
+    font-size: .4rem;
+    letter-spacing: .3rem;
+    font-weight: 700;
+    margin-top: .52rem;
+
+}
+.popup-cont>.des{
+    color: #969696;
+    font-size: .27rem;
+    margin-top: .29rem;
+
 }

@@ -8,6 +8,7 @@
     <script src="js/rem.js"></script>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/newAddress.css" />
+    <link rel="stylesheet" href="css/mobileSelect.css" />
     <link rel="stylesheet" href="js/need/layer.css" />
     <title>新建收货地址</title>
 </head>
@@ -16,7 +17,7 @@
     <div class="contain">
         <input class="name com" placeholder="收货姓名（请使用真实姓名）" type="text">
         <input class="phone com" placeholder="手机号码" type="number">
-        <input class="region com" placeholder="所在区域" type="text" readonly="readonly">
+        <input class="region com" id="txt_area" placeholder="所在区域" type="text" name="region" readonly="readonly">
         <div class="detail-wrap row ">
             <div class="detail-name">详细地址</div>
             <textarea placeholder=""></textarea>
@@ -34,6 +35,8 @@
 <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
 <script src="js/share.js"></script>
 <script src="js/coment.js"></script>
+<script src="js/mobileSelect.min.js"></script>
+<script src="js/address.js"></script>
 
 <script>
     $(function () {
