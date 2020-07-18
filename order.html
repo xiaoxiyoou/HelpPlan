@@ -17,14 +17,14 @@
 <body>
     <div class="contain">
         <div class="sellectAll-wrap row a-c">
-            <img class="checked" src="img/checked.png" alt="">
+            <img class="checkedAll " choose="true" src="img/checked.png" alt="">
             <div class="sellectAll">全选</div>
         </div>
         <!-- 商品 -->
         <div class="goods-wrap">
-            <div class="goods-cont">
+            <div class="goods-cont" id="1">
                 <div class="goods-list row a-c">
-                    <img class="checked" src="img/checked.png" alt="">
+                    <img class="checked" src="img/checked.png" choose="true" alt="">
                     <div class="goods-list row">
                         <img class="godds-img" src="img/goods.png" alt="">
                         <div class="goods-item col j-a">
@@ -42,15 +42,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="select-wrap row a-c">
-                    <div class="select-reduce">-</div>
-                    <input class="select-input-num" type="number" name="goodsNum" value="1" placeholder="">
-                    <div class="select-add">+</div>
+                <div class="goods-btm row j-b a-c">
+                    <div class="num">购买数量</div>
+                    <div class="select-wrap row a-c">
+                        <div class="select-reduce row a-c j-c">-</div>
+                        <input class="select-input-num" type="number" name="goodsNum" value="1" placeholder="">
+                        <div class="select-add row a-c j-c">+</div>
+                    </div>
                 </div>
             </div>
-            <div class="goods-cont">
+            <div class="goods-cont" id="2">
                 <div class="goods-list row a-c">
-                    <img class="checked" src="img/checked.png" alt="">
+                    <img class="checked" src="img/checked.png" choose="true" alt="">
                     <div class="goods-list row">
                         <img class="godds-img" src="img/goods.png" alt="">
                         <div class="goods-item col j-a">
@@ -68,10 +71,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="select-wrap row a-c">
-                    <div class="select-reduce">-</div>
-                    <input class="select-input-num" type="number" name="goodsNum" value="1" placeholder="">
-                    <div class="select-add">+</div>
+                <div class="goods-btm row j-b a-c">
+                    <div class="num">购买数量</div>
+                    <div class="select-wrap row a-c">
+                        <div class="select-reduce row a-c j-c">-</div>
+                        <input class="select-input-num" type="number" name="goodsNum" value="1" placeholder="">
+                        <div class="select-add row a-c j-c">+</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -94,11 +100,93 @@
 
 <script>
     $(function () {
-   
+        var isSelectAll // 商品总数量
+
         // 点击提交
         $(".btn").click(function () {
+            if (isSelectAll == 0) {
+                layer.msg("请至少选择一个商品~");
+                return false
+            }
+          
             window.location.href = './purchase.html'
+
         });
+        // 增加库存数
+        $(".select-add").click(function () {
+            var num = parseInt($(this).prev().val()) + 1
+            $(this).prev().val(num)
+        });
+        // 减少库存数
+        $(".select-reduce").click(function () {
+            console.log('执行')
+            var num = parseInt($(this).next().val()) - 1
+            if (num == 0) {
+                layer.msg("不能小于 1 哦！");
+                return false
+            }
+            $(this).next().val(num)
+
+        });
+        // 点击单选
+        $(".checked").live("click", function () {
+            if ($(this).attr("choose") == "false") {
+                // 改变状态
+                $(this).attr("choose", "true");
+                // 改变图片
+                $(this).attr("src", "img/checked.png");
+                checkedAll();
+            } else {
+                // 改变状态
+                $(this).attr("choose", "false");
+                // 改变图片
+                $(this).attr("src", "img/unchecked.png");
+                checkedAll();
+            }
+        });
+
+        // 点击全选
+        $('.checkedAll').click(function () {
+            if ($(this).attr("choose") == "true") {
+                isSelectAll = 0
+                // 改变单选图片
+                $('.checked').attr("src", "img/unchecked.png");
+                // 改变单选状态
+                $('.checked').attr("choose", false);
+                // 改变多选图片
+                $(this).attr("src", "img/unchecked.png");
+                // 改变多选状态
+                $(this).attr("choose", "false");
+
+            } else {
+                isSelectAll = 2
+                // 改变多选状态
+                $(this).attr("choose", "true");
+                // 改变多选图片
+                $(this).attr("src", "img/checked.png");
+                // 改变单选状态
+                $('.checked').attr("choose", true);
+                // 改变单选图片
+                $('.checked').attr("src", "img/checked.png");
+            }
+        })
+        // 判断是否全部选中
+        function checkedAll() {
+            isSelectAll = 2;
+            $(".checked").each(function () {
+                // 取消选择
+                if ($(this).attr("choose") == "false") {
+                    isSelectAll--
+                }
+                // 是否全部选中
+                if (isSelectAll == $(".checked").length) {
+                    $(".checkedAll").attr("src", "img/checked.png");
+                } else {
+                    $(".checkedAll").attr("src", "img/unchecked.png");
+                }
+            });
+        }
+
 
 
     })

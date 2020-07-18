@@ -18,79 +18,81 @@
 
 <body>
     <div class="contain ">
-        <div class="setting-wrap ">
-            <div class="item row j-b a-c border-btm">
-                <div class="">选择到店赠送礼品</div>
-                <div class=" select-wrap row a-c">
-                    <input class="select-input-text" id="selectOne" name="goodsName" readonly="readonly"
-                        placeholder="选择礼品">
-                    <img class="arrow" src="img/arrow-icon.png" alt="">
+        <form>
+            <div class="setting-wrap ">
+                <div class="item row j-b a-c border-btm">
+                    <div class="">选择到店赠送礼品</div>
+                    <div class=" select-wrap row a-c">
+                        <input class="select-input-text" id="selectOne" name="goodsName" readonly="readonly"
+                            placeholder="选择礼品">
+                        <img class="arrow" src="img/arrow-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="item row j-b a-c">
+                    <div class="">当前库存数量</div>
+                    <div class="select-wrap row a-c">
+                        <div class="select-reduce">-</div>
+                        <input class="select-input-num" type="number" name="goodsNum" value="0" placeholder="">
+                        <div class="select-add">+</div>
+                    </div>
                 </div>
             </div>
-            <div class="item row j-b a-c">
-                <div class="">当前库存数量</div>
-                <div class="select-wrap row a-c">
-                    <div class="select-reduce">-</div>
-                    <input class="select-input-num" type="number" name="goodsNum" value="1" placeholder="">
-                    <div class="select-add">+</div>
+            <div class="setting-wrap ">
+                <div class="item row j-b a-c border-btm">
+                    <div class="">选择到店赠送礼品</div>
+                    <div class="select-wrap row a-c">
+                        <input class="select-input-text" id="selectTwo" name="goodsName" readonly="readonly"
+                            placeholder="选择礼品">
+                        <img class="arrow" src="img/arrow-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="item row j-b a-c">
+                    <div class="">当前库存数量</div>
+                    <div class="select-wrap row a-c">
+                        <div class="select-reduce">-</div>
+                        <input class="select-input-num " type="number" name="goodsNum" value="0" placeholder="">
+                        <div class="select-add">+</div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="setting-wrap ">
-            <div class="item row j-b a-c border-btm">
-                <div class="">选择到店赠送礼品</div>
-                <div class="select-wrap row a-c">
-                    <input class="select-input-text" id="selectTwo" name="goodsName" readonly="readonly"
-                        placeholder="选择礼品">
-                    <img class="arrow" src="img/arrow-icon.png" alt="">
+            <div class="setting-wrap ">
+                <div class="item row j-b a-c border-btm">
+                    <div class="">选择到店赠送礼品</div>
+                    <div class="select-wrap row a-c">
+                        <input class="select-input-text" id="selectThere" name="goodsName" readonly="readonly"
+                            placeholder="选择礼品">
+                        <img class="arrow" src="img/arrow-icon.png" alt="">
+                    </div>
+                </div>
+                <div class="item row j-b a-c">
+                    <div class="">当前库存数量</div>
+                    <div class="select-wrap row a-c">
+                        <div class="select-reduce">-</div>
+                        <input class="select-input-num" type="number" name="goodsNum" value="0" placeholder="">
+                        <div class="select-add">+</div>
+                    </div>
                 </div>
             </div>
-            <div class="item row j-b a-c">
-                <div class="">当前库存数量</div>
-                <div class="select-wrap row a-c">
-                    <div class="select-reduce">-</div>
-                    <input class="select-input-num " type="number" name="goodsNum" value="1" placeholder="">
-                    <div class="select-add">+</div>
+            <div class="setting-wrap ">
+                <div class="item row j-b a-c border-btm">
+                    <div class="title">设置自定义赠送礼品</div>
+                    <input class="select-input-text" type="text" placeholder="填写商品名称" name="goodsName">
+                </div>
+                <div class="item row j-b a-c  border-btm">
+                    <div class="">当前库存数量</div>
+                    <div class="select-wrap row a-c">
+                        <div class="select-reduce">-</div>
+                        <input class="select-input-num" type="number" name="goodsNum" value="0" placeholder="">
+                        <div class="select-add">+</div>
+                    </div>
+                </div>
+                <div class="upload-wrap row j-b a-c">
+                    <div class="">上传商品图片</div>
+                    <img class="upload-img" id="ImageUp" src="img/upload.png" alt="" />
+                    <input id="PicturePath" name="Imgurl" type="hidden" value="" />
                 </div>
             </div>
-        </div>
-        <div class="setting-wrap ">
-            <div class="item row j-b a-c border-btm">
-                <div class="">选择到店赠送礼品</div>
-                <div class="select-wrap row a-c">
-                    <input class="select-input-text" id="selectThere" name="goodsName" readonly="readonly"
-                        placeholder="选择礼品">
-                    <img class="arrow" src="img/arrow-icon.png" alt="">
-                </div>
-            </div>
-            <div class="item row j-b a-c">
-                <div class="">当前库存数量</div>
-                <div class="select-wrap row a-c">
-                    <div class="select-reduce">-</div>
-                    <input class="select-input-num" type="number" name="goodsNum" value="1" placeholder="">
-                    <div class="select-add">+</div>
-                </div>
-            </div>
-        </div>
-        <div class="setting-wrap ">
-            <div class="item row j-b a-c border-btm">
-                <div class="title">设置自定义赠送礼品</div>
-                <input class="select-input-text" type="text" placeholder="填写商品名称" name="goodsName">
-            </div>
-            <div class="item row j-b a-c  border-btm">
-                <div class="">当前库存数量</div>
-                <div class="select-wrap row a-c">
-                    <div class="select-reduce">-</div>
-                    <input class="select-input-num" type="number" name="goodsNum" value="1" placeholder="">
-                    <div class="select-add">+</div>
-                </div>
-            </div>
-            <div class="upload-wrap row j-b a-c">
-                <div class="">上传商品图片</div>
-                <img class="upload-img" id="ImageUp" src="img/upload.png" alt="" />
-                <input id="PicturePath" name="Imgurl" type="hidden" value="" />
-            </div>
-        </div>
+        </form>
         <div class="btm-wrap  row">
             <div class="submit row a-c j-c">确认发布</div>
             <div class="purchase row a-c j-c">我要进货</div>
@@ -111,6 +113,7 @@
 
 <script>
     $(function () {
+        // 商品下拉框
         var mobileSelect1 = new MobileSelect({
             trigger: '#selectOne',
             title: '礼品选择',
@@ -149,21 +152,49 @@
         });
         // 增加库存数
         $(".select-add").click(function () {
-            var num = parseInt($(".select-input-two").val()) + 1
-            $(".select-input-two").val(num)
+            var num = parseInt($(this).prev().val()) + 1
+            $(this).prev().val(num)
         });
         // 减少库存数
         $(".select-reduce").click(function () {
-            var num = parseInt($(".select-input-two").val()) - 1
-            if (num == 0) {
-                layer.msg("最少需要一件哦！");
+            console.log('执行')
+            var num = parseInt($(this).next().val()) - 1
+            if (num == -1) {
+                layer.msg("不能小于 0 哦！");
                 return false
             }
-            $(".select-input-two").val(num)
+            $(this).next().val(num)
+
         });
+        // 确认提交
         $(".purchase ").click(function () {
             window.location.href = './order.html'
         });
+        // 进货
+        $(".submit").click(function () {
+            goodsName = []
+            // 得到商品名称
+            $("input[name='goodsName']").each(function () {
+                var value = $(this).val();
+                goodsName.push($(this).val());
+
+                console.log('goodsName', goodsName)
+
+            });
+            // 未选择任何商品
+            if (!goodsName.join(",")) {
+                layer.msg("请至少选择一个商品");
+                return false;
+            }
+            console.log('goodsName', goodsName)
+
+            // 所有商品数据
+            var params = $("form").serialize();
+            // alert(decodeURIComponent(params))
+
+
+        });
+
 
     })
 </script>
