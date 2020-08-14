@@ -14,21 +14,29 @@
     <title>我要进货</title>
 </head>
 
+
+
 <body>
     <div class="contain">
         <div class="sellectAll-wrap row a-c">
-            <img class="checkedAll " choose="true" src="img/checked.png" alt="">
+            <label for="chooseAll" class="choose_label choose_check">
+                <input id="chooseAll" type="checkbox" name="chooseAll" class="choose_input" autocomplete="off" />
+            </label>
+
             <div class="sellectAll">全选</div>
         </div>
         <!-- 商品 -->
         <div class="goods-wrap">
             <div class="goods-cont" id="1">
                 <div class="goods-list row a-c">
-                    <img class="checked" src="img/checked.png" choose="true" alt="">
+                    <label for="choose_2" class="choose_label choose_check">
+                        <input id="choose_2" type="checkbox" name="choose" class="choose_input" autocomplete="off" />
+                    </label>
+
                     <div class="goods-list row">
                         <img class="godds-img" src="img/goods.png" alt="">
                         <div class="goods-item col j-a">
-                            <div class="goods-name">家族宝红布条家族宝红布条家族宝红布条家族宝红布条家族宝红布条家族宝红布条家族宝红布条家族宝红布条</div>
+                            <div class="goods-name">家族宝红布条</div>
                             <div class="progress-wrap row a-c">
                                 <div class="layui-progress">
                                     <div class="layui-progress-bar"></div>
@@ -37,7 +45,7 @@
                             </div>
                             <div class="goods-price row a-c">
                                 <div class="defalut-price">￥<span>3</span>.00</div>
-                                <div class="privi-price row a-c j-c">诚商价格￥<span>2</span>.00</div>
+                                <div class="privi-price row a-c j-c">紫钻价格￥<span>2</span>.00</div>
                             </div>
                         </div>
                     </div>
@@ -53,7 +61,9 @@
             </div>
             <div class="goods-cont" id="2">
                 <div class="goods-list row a-c">
-                    <img class="checked" src="img/checked.png" choose="true" alt="">
+                    <label for="choose_1" class="choose_label choose_check">
+                        <input id="choose_1" type="checkbox" name="choose" class="choose_input" autocomplete="off" />
+                    </label>
                     <div class="goods-list row">
                         <img class="godds-img" src="img/goods.png" alt="">
                         <div class="goods-item col j-a">
@@ -66,7 +76,7 @@
                             </div>
                             <div class="goods-price row a-c">
                                 <div class="defalut-price">￥<span>3</span>.00</div>
-                                <div class="privi-price row a-c j-c">诚商价格￥<span>2</span>.00</div>
+                                <div class="privi-price row a-c j-c">紫钻价格￥<span>2</span>.00</div>
                             </div>
                         </div>
                     </div>
@@ -85,7 +95,7 @@
         <div class="purchase-btm row  a-c">
             <div class="price-wrap  col j-c">
                 <div class="defalut-price">（不含运费）合计：￥<span>70</span>.00</div>
-                <div class="shop-price">诚商进货将节省：￥<span>10</span>.00</div>
+                <div class="shop-price">紫钻会员进货将节省：￥<span>10</span>.00</div>
             </div>
             <div class="btn col a-c j-c">提交订货申请</div>
         </div>
@@ -100,15 +110,14 @@
 
 <script>
     $(function () {
-        var isSelectAll // 商品总数量
 
         // 点击提交
         $(".btn").click(function () {
-            if (isSelectAll == 0) {
+            if ($(":checkbox[type=checkbox]:checked").size() == 0) {
                 layer.msg("请至少选择一个商品~");
                 return false
             }
-          
+
             window.location.href = './purchase.html'
 
         });
@@ -128,66 +137,58 @@
             $(this).next().val(num)
 
         });
-        // 点击单选
-        $(".checked").live("click", function () {
-            if ($(this).attr("choose") == "false") {
-                // 改变状态
-                $(this).attr("choose", "true");
-                // 改变图片
-                $(this).attr("src", "img/checked.png");
-                checkedAll();
+
+        /*全选及取消*/
+        $('input[name="chooseAll"]').click(function () {
+            var par_label = $(this).parent();
+            if ($(this).is(':checked')) {
+                par_label.removeClass("choose_check").addClass("choose_checked");
+                $('input[name="choose"]').each(function () {
+                    //此处如果用attr，会出现第三次失效的情况  
+                    $(this).prop("checked", true);
+                    $(this).parent().removeClass("choose_check").addClass("choose_checked");
+                });
             } else {
-                // 改变状态
-                $(this).attr("choose", "false");
-                // 改变图片
-                $(this).attr("src", "img/unchecked.png");
-                checkedAll();
+                par_label.removeClass("choose_checked").addClass("choose_check");
+                $('input[name="choose"]').each(function () {
+                    //此处如果用attr，会出现第三次失效的情况  
+                    $(this).prop("checked", false);
+                    $(this).parent().removeClass("choose_checked").addClass("choose_check");
+                });
             }
         });
 
-        // 点击全选
-        $('.checkedAll').click(function () {
-            if ($(this).attr("choose") == "true") {
-                isSelectAll = 0
-                // 改变单选图片
-                $('.checked').attr("src", "img/unchecked.png");
-                // 改变单选状态
-                $('.checked').attr("choose", false);
-                // 改变多选图片
-                $(this).attr("src", "img/unchecked.png");
-                // 改变多选状态
-                $(this).attr("choose", "false");
+        $('input[name="choose"]').click(function () {
+            var par_label = $(this).parent();
+            /*选项总长度*/
+            var length = $('input[name="choose"]').length;
+            /*被选中项长度   如果两个长度一样  说明全选*/
+            var choose_length = $('input[name="choose"]:checked').length;
+            if (this.checked) {
+                par_label.removeClass("choose_check").addClass("choose_checked");
+                if (length == choose_length) {
+                    $('input[name="chooseAll"]').prop("checked", true);
+                    $('input[name="chooseAll"]').parent().removeClass("choose_check").addClass(
+                        "choose_checked");
+                } else {
+                    $('input[name="chooseAll"]').prop("checked", false);
+                    $('input[name="chooseAll"]').parent().removeClass("choose_checked").addClass(
+                        "choose_check");
+                }
 
             } else {
-                isSelectAll = 2
-                // 改变多选状态
-                $(this).attr("choose", "true");
-                // 改变多选图片
-                $(this).attr("src", "img/checked.png");
-                // 改变单选状态
-                $('.checked').attr("choose", true);
-                // 改变单选图片
-                $('.checked').attr("src", "img/checked.png");
-            }
-        })
-        // 判断是否全部选中
-        function checkedAll() {
-            isSelectAll = 2;
-            $(".checked").each(function () {
-                // 取消选择
-                if ($(this).attr("choose") == "false") {
-                    isSelectAll--
-                }
-                // 是否全部选中
-                if (isSelectAll == $(".checked").length) {
-                    $(".checkedAll").attr("src", "img/checked.png");
+                par_label.removeClass("choose_checked").addClass("choose_check");
+                if (length == choose_length) {
+                    $('input[name="chooseAll"]').prop("checked", true);
+                    $('input[name="chooseAll"]').parent().removeClass("choose_check").addClass(
+                        "choose_checked");
                 } else {
-                    $(".checkedAll").attr("src", "img/unchecked.png");
+                    $('input[name="chooseAll"]').prop("checked", false);
+                    $('input[name="chooseAll"]').parent().removeClass("choose_checked").addClass(
+                        "choose_check");
                 }
-            });
-        }
-
-
+            }
+        });
 
     })
 </script>

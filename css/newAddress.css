@@ -1,55 +1,70 @@
-.contain{
+.contain {
     background-color: #f5f5f5;
     width: 100%;
     height: 100%;
     position: absolute;
 }
-.com{
-    width:7.2rem;
+
+.com {
+    width: 7.2rem;
     height: .98rem;
     border-bottom: 1px solid #dfe1e6;
     margin-left: .3rem;
     font-size: .3rem;
     background-color: #f5f5f5;
 }
-.detail-name{
+
+.detail-name {
     height: 2rem;
     font-size: .31rem;
     color: #c5c5c5;
 }
-.detail-wrap{
+
+.detail-wrap {
     height: 2.38rem;
     margin-left: .3rem;
     font-size: .3rem;
     padding-top: .3rem;
 }
-textarea{
+
+textarea {
     width: 5rem;
     height: 2rem;
-    font-family:Arial;
+    font-family: Arial;
     background-color: #f5f5f5;
     font-size: .31rem;
-    padding: 0 ;
+    padding: 0;
     margin: 0;
     margin-left: .15rem;
 }
-.default-wrap{
-    width:100% ;
+
+.default-wrap {
+    width: 100%;
     height: .98rem;
     background-color: #ffffff;
     padding: 0 .3rem;
     font-size: .31rem;
 }
-.checked{
-    width:.39rem ;
+
+.unchecked {
+    width: .39rem;
     height: .39rem;
-   
+    background: url("./../img/unchecked.png") no-repeat;
+    background-size: 100%;
 }
-.save{
+
+.checked {
+    width: .39rem;
+    height: .39rem;
+    background: url("./../img/checked.png") no-repeat;
+    background-size: 100%;
+}
+
+.save {
     height: .8rem;
     border-bottom: 1px solid #dfe1e6;
     font-size: .3rem;
-    background-image: linear-gradient(to right,#686194, rgb(90, 81, 151));
+    background-image: linear-gradient(to right, #686194, rgb(90, 81, 151));
     color: #ffffff;
     margin: 0 auto;
     margin-top: 2rem;

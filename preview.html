@@ -8,7 +8,6 @@
     <script src="js/rem.js"></script>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/preview.css" />
-    <link rel="stylesheet" href="css/popup.css" />
     <link rel="stylesheet" href="js/need/layer.css" />
     <title>预览</title>
 </head>
@@ -23,13 +22,13 @@
                     <div class="pre-top row a-c j-b">
                         <div class="pre-name-wrap">
                             <div class="pre-name">家族宝红布条</div>
-                            <div class="pre-des">免费到店领取指定商品</div>
+                            <div class="pre-des">商家回礼免费领取</div>
                         </div>
                         <div class="pre-money">￥3.00</div>
                     </div>
                     <div class="pre-btm row j-b ">
                         <div class="pre-date">2020.2.1-2020.3.1</div>
-                        <div class="pre-btn row a-c j-c">免费到店领取</div>
+                        <div class="pre-btn row a-c j-c">免费领取</div>
                     </div>
                 </div>
             </div>
@@ -39,13 +38,13 @@
                     <div class="pre-top row a-c j-b">
                         <div class="pre-name-wrap">
                             <div class="pre-name">家族宝红布条</div>
-                            <div class="pre-des">免费到店领取指定商品</div>
+                            <div class="pre-des">商家回礼免费领取</div>
                         </div>
                         <div class="pre-money">￥3.00</div>
                     </div>
                     <div class="pre-btm row j-b ">
                         <div class="pre-date">2020.2.1-2020.3.1</div>
-                        <div class="pre-btn row a-c j-c">免费到店领取</div>
+                        <div class="pre-btn row a-c j-c">免费领取</div>
                     </div>
                 </div>
             </div>
@@ -55,13 +54,13 @@
                     <div class="pre-top row a-c j-b">
                         <div class="pre-name-wrap">
                             <div class="pre-name">家族宝红布条</div>
-                            <div class="pre-des">免费到店领取指定商品</div>
+                            <div class="pre-des">商家回礼免费领取</div>
                         </div>
                         <div class="pre-money">￥3.00</div>
                     </div>
                     <div class="pre-btm row j-b ">
                         <div class="pre-date">2020.2.1-2020.3.1</div>
-                        <div class="pre-btn row a-c j-c">免费到店领取</div>
+                        <div class="pre-btn row a-c j-c">免费领取</div>
                     </div>
                 </div>
             </div>
@@ -71,30 +70,18 @@
                     <div class="pre-top row a-c j-b">
                         <div class="pre-name-wrap">
                             <div class="pre-name">家族宝红布条</div>
-                            <div class="pre-des">免费到店领取指定商品</div>
+                            <div class="pre-des">商家回礼免费领取</div>
                         </div>
                         <div class="pre-money">￥3.00</div>
                     </div>
                     <div class="pre-btm row j-b ">
                         <div class="pre-date">2020.2.1-2020.3.1</div>
-                        <div class="pre-btn row a-c j-c">免费到店领取</div>
+                        <div class="pre-btn row a-c j-c">免费领取</div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- 领取弹出框 -->
-        <div class="popup-wrap">
-            <div class="popup-mask"></div>
-            <div class="popup-cont  col a-c j-c">
-                <img class="cross" src="img/cross.png" alt="" />
-                <div class="title">请输入信息免费到店领取礼品</div>
-                <input type="text" placeholder="请输入您的姓名">
-                <input type="number" placeholder="请输入手机号码">
-                <div class="btn row a-c j-c">确认领取</div>
-                <div class="tip">关注公众号<span>“赋予爱的亲人尽孝服务平台”</span></div>
-                <div class="tip">领取此券后，请在<span>“个人中心-优惠券”</span>中查看</div>
-            </div>
-        </div>
+ 
         <!-- 底部 -->
         <div class="btm-wrap  row">
             <div class="back row a-c j-c">返回</div>
@@ -121,15 +108,9 @@
         });
         // 点击到店领取
         $(".pre-btn ").click(function () {
-            $(".popup-wrap").css('display', 'block')
+            layer.msg("此页面为预览效果~");
         });
-        // 点击关闭
-        $(".cross").click(function () {
-            $(".popup-wrap").css('display', 'none')
-        });
-        $(".popup-mask").click(function () {
-            $(".popup-wrap").css('display', 'none')
-        });
+      
 
     })
 </script>

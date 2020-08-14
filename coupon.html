@@ -38,13 +38,13 @@
                         <div class="pre-top row a-c j-b">
                             <div class="pre-name-wrap">
                                 <div class="pre-name">家族宝红布条</div>
-                                <div class="pre-des">免费到店领取指定商品</div>
+                                <div class="pre-des">商家回礼免费领取</div>
                             </div>
                             <div class="pre-money">￥3.00</div>
                         </div>
                         <div class="pre-btm row j-b ">
                             <div class="pre-date">2020.2.1-2020.3.1</div>
-                            <div class="pre-btn row a-c j-c">免费到店领取</div>
+                            <div class="pre-btn row a-c j-c">免费领取</div>
                         </div>
                     </div>
                 </div>
@@ -60,13 +60,13 @@
                         <div class="pre-top row a-c j-b">
                             <div class="pre-name-wrap">
                                 <div class="pre-name">家族宝红布条</div>
-                                <div class="pre-des">免费到店领取指定商品</div>
+                                <div class="pre-des">商家回礼免费领取</div>
                             </div>
                             <div class="pre-money">￥3.00</div>
                         </div>
                         <div class="pre-btm row j-b ">
                             <div class="pre-date">2020.2.1-2020.3.1</div>
-                            <div class="pre-btn row a-c j-c">免费到店领取</div>
+                            <div class="pre-btn row a-c j-c">免费领取</div>
                         </div>
                     </div>
                 </div>
@@ -83,8 +83,8 @@
             <div class="popup-cont  col a-c j-c">
                 <img class="cross" src="img/cross.png" alt="" />
                 <div class="title">请输入信息免费到店领取礼品</div>
-                <input type="text" placeholder="请输入您的姓名">
-                <input type="number" placeholder="请输入手机号码">
+                <input type="text" name="name" placeholder="请输入您的姓名">
+                <input type="number" name="phone" placeholder="请输入手机号码">
                 <div class="btn row a-c j-c">确认领取</div>
                 <div class="tip">关注公众号<span>“赋予爱的亲人尽孝服务平台”</span></div>
                 <div class="tip">领取此券后，请在<span>“个人中心-优惠券”</span>中查看</div>
@@ -116,6 +116,21 @@
         });
         $(".popup-mask").click(function () {
             $(".popup-wrap").css('display', 'none')
+        });
+        // 确认领取
+        $(".btn").click(function () {
+            if (!$("input[name='name']").val()) {
+                layer.msg("请输入您的姓名");
+                return false
+            } else if (!$("input[name='phone']").val()) {
+                layer.msg("请输入您的电话");
+                return false
+            } else if (!(/^1(3|4|5|6|7|8|9)\d{9}$/.test($("input[name='phone']").val()))) {
+                layer.msg("请输入正确手机号");
+                return false;
+            }
+            $(".popup-wrap").css('display', 'none')
+            layer.msg("领取成功~");
         });
 
     })

@@ -9,9 +9,19 @@
     margin-bottom: .15rem;
     background-color: #ffffff;
 }
-.address-cont>.checked{
+
+.unchecked {
     width: .39rem;
     height: .39rem;
+    background: url("./../img/unchecked.png") no-repeat;
+    background-size: 100%;
+}
+
+.checked {
+    width: .39rem;
+    height: .39rem;
+    background: url("./../img/checked.png") no-repeat;
+    background-size: 100%;
 }
 .address-item{
     width: 5.39rem;

@@ -75,3 +75,10 @@ input {
     background: #686194;
     color: #ffffff;
 }
+.layui-layer-btn .layui-layer-btn0 {
+    border-color: #6a6198!important;
+    background-color: #6a6198!important;
+}
+.layui-layer-btn{
+    font-size: .28rem;
+}

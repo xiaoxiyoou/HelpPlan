@@ -92,9 +92,29 @@
         $(".purchase ").click(function () {
             window.location.href = "./setting.html"
         });
-         // 进入预览页面
-         $(".submit ").click(function () {
+        // 进入预览页面
+        $(".submit ").click(function () {
             window.location.href = "./preview.html"
+        });
+        // 下一页
+        $(".next").click(function () {
+            layer.msg("下一页");
+        });
+        // 上一页
+        $(".prev").click(function () {
+            layer.msg("上一页");
+        });
+        // 点击核销
+        $(".statusHover").click(function () {
+            layer.confirm('您确定要核销此条数据吗？', {
+                btn: ['确定', '取消']
+            }, function () {
+                // alert('确定')
+                $(".layui-layer-shade").css("display","none")
+                $(".layui-layer").css("display","none")
+            }, function () {
+                // alert('取消')
+            });
         });
 
 

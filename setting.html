@@ -118,36 +118,48 @@
             trigger: '#selectOne',
             title: '礼品选择',
             wheels: [{
-                data: ['红布条', '福禄五帝钱', '平安符', '雨渐耳挂件', '五行能量球', '孝心能量卡']
+                data: ['红布条', '福禄五帝钱', '平安符', '雨渐耳挂件', '五行能量球', '孝心能量卡', '取消选择']
             }],
             ensureBtnColor: '#686194',
             position: [1],
             callback: function (indexArr, data) {
-                $("input[name='goodsName']").eq(0).val(data);
+                if (data == "取消选择") {
+                    $("input[name='goodsName']").eq(0).val("");
+                } else {
+                    $("input[name='goodsName']").eq(0).val(data);
+                }
             }
         });
         var mobileSelect1 = new MobileSelect({
             trigger: '#selectTwo',
             title: '礼品选择',
             wheels: [{
-                data: ['红布条', '福禄五帝钱', '平安符', '雨渐耳挂件', '五行能量球', '孝心能量卡']
+                data: ['红布条', '福禄五帝钱', '平安符', '雨渐耳挂件', '五行能量球', '孝心能量卡', '取消选择']
             }],
             position: [1],
             ensureBtnColor: '#686194',
             callback: function (indexArr, data) {
-                $("input[name='goodsName']").eq(1).val(data);
+                if (data == "取消选择") {
+                    $("input[name='goodsName']").eq(1).val("");
+                } else {
+                    $("input[name='goodsName']").eq(1).val(data);
+                }
             }
         });
         var mobileSelect1 = new MobileSelect({
             trigger: '#selectThere',
             title: '礼品选择',
             wheels: [{
-                data: ['红布条', '福禄五帝钱', '平安符', '雨渐耳挂件', '五行能量球', '孝心能量卡']
+                data: ['红布条', '福禄五帝钱', '平安符', '雨渐耳挂件', '五行能量球', '孝心能量卡', '取消选择']
             }],
             ensureBtnColor: '#686194',
             position: [1],
             callback: function (indexArr, data) {
-                $("input[name='goodsName']").eq(2).val(data);
+                if (data == "取消选择") {
+                    $("input[name='goodsName']").eq(2).val("");
+                } else {
+                    $("input[name='goodsName']").eq(2).val(data);
+                }
             }
         });
         // 增加库存数
@@ -166,31 +178,23 @@
             $(this).next().val(num)
 
         });
-        // 确认提交
+        // 我要进货
         $(".purchase ").click(function () {
             window.location.href = './order.html'
         });
-        // 进货
+        // 确认发布
         $(".submit").click(function () {
-            goodsName = []
-            // 得到商品名称
-            $("input[name='goodsName']").each(function () {
-                var value = $(this).val();
-                goodsName.push($(this).val());
-
-                console.log('goodsName', goodsName)
-
+            var isAllEmpty = $("input[name='goodsName']").toArray().every(function (input) {
+                return input.value === '';
             });
-            // 未选择任何商品
-            if (!goodsName.join(",")) {
+            if (isAllEmpty) {
                 layer.msg("请至少选择一个商品");
-                return false;
-            }
-            console.log('goodsName', goodsName)
+                return false
 
+            }
             // 所有商品数据
             var params = $("form").serialize();
-            // alert(decodeURIComponent(params))
+            alert(decodeURIComponent(params))
 
 
         });

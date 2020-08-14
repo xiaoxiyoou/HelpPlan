@@ -12,10 +12,22 @@
     margin-top: 0;
 }
 
-.checked{
-    width: .4rem;
-    height: .4rem;
+/* 未选中 */
+.choose_check {
     margin-right: .2rem;
+    width: .39rem;
+    height: .39rem;
+    background: url("./../img/unchecked.png") no-repeat;
+    background-size: 100%;
+
+}
+/* 选中 */
+.choose_checked {
+    margin-right: .2rem;
+    width: .39rem;
+    height: .39rem;
+    background: url("./../img/checked.png") no-repeat;
+    background-size: 100%;
 }
 
 .checkedAll{

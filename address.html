@@ -16,7 +16,9 @@
     <div class="contain">
         <div class="address-wrap">
             <div class="address-cont row j-b a-c">
-                <img class="checked" src="img/checked.png" alt="">
+                <label for="choose_1" class="input_label  checked">
+                    <input id="choose_1" type="radio" name="single" class="single_input" autocomplete="off" />
+                </label>
                 <div class="address-item">
                     <div class="address-name">辽宁省 沈阳市 大东区</div>
                     <div class="address-des">辽宁省沈阳市铁西区经济技术开发区中央
@@ -26,7 +28,9 @@
                 <img class="edit" src="img/edit.png" alt="">
             </div>
             <div class="address-cont row j-b a-c">
-                <img class="checked" src="img/unchecked.png" alt="">
+                <label for="choose_2" class="input_label unchecked">
+                    <input id="choose_2" type="radio" name="single" class="single_input" autocomplete="off" />
+                </label>
                 <div class="address-item">
                     <div class="address-name">辽宁省 沈阳市 大东区</div>
                     <div class="address-des">辽宁省沈阳市铁西区经济技术开发区中央
@@ -58,6 +62,15 @@
         $(".edit").click(function () {
             window.location.href = "./newAddress.html"
         });
+        $(".single_input").on("click", function () {
+            if ($("input[type='radio']").is(':checked')) {
+                // 移除所有label样式
+                $(".input_label").removeClass("checked").addClass("unchecked");
+                // 当前选中input的父元素（label)
+                $(this).parent().removeClass("unchecked").addClass("checked");
+            }
+        });
+
     })
 </script>
 
